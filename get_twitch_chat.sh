@@ -1,14 +1,20 @@
 mkdir "twitch_chat" > /dev/null 2>&1
-VID=$1
-echo $VID > VID.txt
-MAX_T=3500
-while [ $VID -ge 0 ]; do
-    ((i=i%MAX_T)); ((i++==0)) && wait
-    tcd --settings-file "custom_settings.json" -v $VID -f json -o "twitch_chat" &
-    sleep 0.02
-    VID=$(($VID - 1))
-    # if [ ! $(($VID % 1000)) ]
-    #     then
-    #     echo $VID > EVID.txt
-    # fi
+
+function get_twitch_chat {
+    VID=$(<VID.txt)
+    echo "I'm starting at video "$VID
+    MAX_T=1000
+    EVID=$(($VID-25000))
+    while [ $VID -ge $EVID ]; do
+        ((i=i%MAX_T)); ((i++==0)) && wait
+        tcd --settings-file "custom_settings.json" -v $VID -f json -o "twitch_chat" &
+        sleep 0.1
+        VID=$(($VID - 1))
+    done
+    echo $VID > VID.txt
+}
+
+while [ true ]; do
+    get_twitch_chat
+    sleep 1
 done

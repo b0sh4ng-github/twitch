@@ -31,8 +31,15 @@ else:
     os.makedirs(screenshot_dir)
 
 # pickle this with IO for easiest database-equivalent
-social_media = ['https://twitch.tv/', 'https://twitter.com/', 'https://facebook.com/', 'https://www.reddit.com/r/', 'https://www.pornhub.com/video/search?search=']
-criminal_suspects = [['pokimane', 'pokimanelol', 'pokimane', 'pokimane', 'pokimane']]
+# social_media = ['https://twitch.tv/', 'https://twitter.com/', 'https://facebook.com/', 'https://www.reddit.com/r/', 'https://www.pornhub.com/video/search?search=']
+criminal_suspects = {
+  'https://twitch.tv/' : ['pokimanelol'],
+  'https://twitter.com/' : ['pokimanelol'],
+  'https://facebook.com/' : ['pokimane'],
+  'https://www.reddit.com/r/' : ['pokimane'],
+  'https://www.pornhub.com/video/search?search=' : ['pokimane'],
+  'https://www.linkedin.com/in/' : [ None ]
+}
 
 def remove_whitespace(string): 
     string = string.replace(" ", "-")
@@ -53,9 +60,12 @@ def screenshot_criminal_suspects():
     with webdriver.Chrome(options=chrome_options) as driver:
         # actions = ActionChains(driver)
         driver.set_window_size(1920,8640) #4320
-        for idx, val in enumerate(criminal_suspects):
-            for sub_idx, subdomain in enumerate(val):
-                url = social_media[sub_idx] + subdomain
+        for key in criminal_suspects:
+            for val in criminal_suspects[key]: 
+                if val != None:
+                    url = key + val
+                else:
+                    pass
                 print(url)
                 driver.get(url)
                 time.sleep(3)
@@ -65,6 +75,14 @@ def screenshot_criminal_suspects():
                 url_nws = remove_whitespace(url)
                 print(utc_str_nws)
                 driver.save_screenshot( "tw_screenshots/" + url_nws + utc_str_nws + ".png")
+                # driver.execute_script("window.scrollTo(0, 8000)") 
+                # time.sleep(3)
+                # current_utc = datetime.datetime.utcnow()
+                # utc_str = str(current_utc)
+                # utc_str_nws = remove_whitespace(utc_str)
+                # url_nws = remove_whitespace(url)
+                # print(utc_str_nws)
+                # driver.save_screenshot( "tw_screenshots/" + url_nws + utc_str_nws + ".png")
 
 if __name__ == '__main__':
     screenshot_criminal_suspects()

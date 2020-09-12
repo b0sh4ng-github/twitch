@@ -8,7 +8,7 @@ function get_twitch_chat {
     while [ $VID -ge $EVID ]; do
         ((i=i%MAX_T)); ((i++==0)) && wait
         tcd --settings-file "custom_settings.json" -v $VID -f json -o "twitch_chat" &
-        sleep 0.0025
+        sleep 0.025
         VID=$(($VID - 1))
     done
     echo $VID > VID.txt

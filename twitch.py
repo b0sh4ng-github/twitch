@@ -1,5 +1,5 @@
 # USAGE
-# python3 twitch_v0.py 
+# python3 twitch.py 
 
 # import openvpn_api.VPN
 # v = openvpn_api.VPN('139.28.218.75 443', 443)

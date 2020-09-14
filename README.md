@@ -15,3 +15,11 @@
 # To visit the dark net marketplaces please visit https://discord.com/
 
 # To visit some other web apps please download the Tor Browser https://www.torproject.org/download/ open it; type about:config; type javascript.enabled; toggle false; then visit http://darkfailllnkf4vf.onion/
+
+https://yadi.sk/d/XEjKCc_zwhoSMA
+
+https://www.xing.com/profile/Bo_Shang/cv
+https://medium.com/@ai4humanity/
+https://github.com/b0sh4ng-github/twitch
+
+To learn more about me, please visit https://ai4humanity.online

@@ -27,3 +27,5 @@ https://github.com/b0sh4ng-github/twitch
 To learn more about me, please visit https://ai4humanity.online
 
 # Without captcha you can make a bot but I'm not a fan of it so I'm leaving this at captcha farming; working-captcha-passing code is kept private for now
+
+# Hint: you have to figure out where the legs are and find a parallel algorithm; you can manually tag it (with rotation as an added factor or not, you have to account for it so you might as well place it in the neural network since a detection algorithm may use rotation on top or may simply use object detection) then run it through an autoencoder or think about how to write the neural nets (artificial neurons forming layers OR filter layers) from scratch.

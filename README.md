@@ -25,3 +25,5 @@ https://medium.com/@ai4humanity/
 https://github.com/b0sh4ng-github/twitch
 
 To learn more about me, please visit https://ai4humanity.online
+
+# Without captcha you can make a bot but I'm not a fan of it so I'm leaving this at captcha farming; working-captcha-passing code is kept private for now

@@ -7,5 +7,5 @@ mkdir tw_videos > /dev/null 2>&1
 
 youtube-dl -U
 
-cd tw_videos && youtube-dl --force-ipv4 --geo-bypass --download-archive ydl-archive.txt -R 50 -c --write-thumbnail https://twitch.tv/videos/$VIDEO_NUM &
+cd tw_videos && youtube-dl --force-ipv4 --geo-bypass --download-archive ydl-archive.txt -R 50 -c --write-thumbnail https://twitch.tv/videos/$VIDEO_NUM
 

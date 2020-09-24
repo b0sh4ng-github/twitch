@@ -63,17 +63,17 @@ def screenshot_criminal_suspects():
             for val in criminal_suspects[key]: 
                 if val != None:
                     url = key + val
+                    print(url)
+                    driver.get(url)
+                    time.sleep(3)
+                    current_utc = datetime.datetime.utcnow()
+                    utc_str = str(current_utc)
+                    utc_str_nws = remove_whitespace(utc_str)
+                    url_nws = remove_whitespace(url)
+                    print(utc_str_nws)
+                    driver.save_screenshot( "criminal_screenshots/" + url_nws + utc_str_nws + ".png")
                 else:
                     pass
-                print(url)
-                driver.get(url)
-                time.sleep(3)
-                current_utc = datetime.datetime.utcnow()
-                utc_str = str(current_utc)
-                utc_str_nws = remove_whitespace(utc_str)
-                url_nws = remove_whitespace(url)
-                print(utc_str_nws)
-                driver.save_screenshot( "criminal_screenshots/" + url_nws + utc_str_nws + ".png")
 
 if __name__ == '__main__':
     screenshot_criminal_suspects()

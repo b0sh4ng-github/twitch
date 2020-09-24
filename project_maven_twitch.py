@@ -32,7 +32,7 @@ else:
 
 # pickle this with IO for easiest database-equivalent
 criminal_suspects = {
-  'https://twitch.tv/' : ['pokimanelol'],
+  'https://twitch.tv/' : ['pokimane'],
   'https://twitter.com/' : ['pokimanelol'],
   'https://facebook.com/' : ['pokimane'],
   'https://www.reddit.com/r/' : ['pokimane'],
